@@ -1,5 +1,6 @@
 {
-    "compilerOptions": {
-        "types": ["node", "mocha"]
-    }
+  "compilerOptions": {
+    "types": ["node", "mocha", "jest"],
+    "esModuleInterop": true
+  }
 }

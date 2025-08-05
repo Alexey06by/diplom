@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "unitTest": "mocha ./test/unit/*.*.ts"
+    "unitTest": "mocha ./test/unit/*.*.ts",
+    "apiTest": "jest ./test/api/*.*.ts"
   },
   "keywords": [],
   "author": "",
@@ -11,9 +12,15 @@
   "description": "",
   "devDependencies": {
     "@types/chai": "^5.2.2",
+    "@types/jest": "^30.0.0",
     "@types/mocha": "^10.0.10",
+    "@types/superagent": "^8.1.9",
     "chai": "^5.2.1",
+    "dotenv": "^17.2.1",
+    "jest": "^30.0.5",
     "mocha": "^11.7.1",
+    "superagent": "^10.2.3",
+    "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2"
   }
 }
