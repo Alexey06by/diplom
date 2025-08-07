@@ -5,9 +5,7 @@ dotenv.config();
 
 describe("DELETE method", () => {
   it("Should return status 200", async () => {
-    const res = await superagent.delete(
-      process.env.BASE_URL + endpoints.delete + 1
-    );
+    const res = await superagent.delete(process.env.BASE_API_URL + endpoints.delete + 1);
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual({});
@@ -15,9 +13,7 @@ describe("DELETE method", () => {
 
   for (let i = 0; i < 4; i++) {
     it(`Should delete resource #${i + 1}`, async () => {
-      const res = await superagent.delete(
-        process.env.BASE_URL + endpoints.delete + `${i + 1}`
-      );
+      const res = await superagent.delete(process.env.BASE_API_URL + endpoints.delete + `${i + 1}`);
 
       expect(res.statusCode).toBe(200);
       expect(res.body).toEqual({});

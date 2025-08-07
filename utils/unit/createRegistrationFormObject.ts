@@ -7,7 +7,7 @@ export function createRegistrationFormObject() {
     3750297243632,
     "testEmail@gmail.com",
     "passworD1",
-    "passworD1"
+    "passworD1",
   );
   return registrationForm;
 }

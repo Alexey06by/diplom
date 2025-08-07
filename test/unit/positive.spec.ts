@@ -52,7 +52,7 @@ describe("Positive tests", function () {
       3750297243632,
       "testEmail@gmail.com",
       "passworD1",
-      "passworD1"
+      "passworD1",
     );
     registrationForm.register();
 
@@ -68,7 +68,7 @@ describe("Positive tests", function () {
       3750297243632,
       "testEmail@gmail.com",
       "passworD1",
-      "passworD1"
+      "passworD1",
     );
     registrationForm.register();
 
@@ -84,7 +84,7 @@ describe("Positive tests", function () {
       "",
       "testEmail@gmail.com",
       "passworD1",
-      "passworD1"
+      "passworD1",
     );
     registrationForm.register();
 
@@ -94,14 +94,7 @@ describe("Positive tests", function () {
     expect(registrationForm.isActivated).to.equal(false);
   });
   it("Should register user with valid input without First Name, Second Name and Phone Number", function () {
-    const registrationForm = new RegistrationForm(
-      "",
-      "",
-      "",
-      "testEmail@gmail.com",
-      "passworD1",
-      "passworD1"
-    );
+    const registrationForm = new RegistrationForm("", "", "", "testEmail@gmail.com", "passworD1", "passworD1");
     registrationForm.register();
 
     expect(registrationForm.firstName).to.equal("");

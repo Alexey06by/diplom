@@ -15,7 +15,7 @@ export class RegistrationForm {
     pnoneNumber: string | number,
     email: string,
     password: string,
-    confirmPassword: string
+    confirmPassword: string,
   ) {
     this.firstName = firstName;
     this.secondName = secondName;
@@ -49,15 +49,11 @@ export class RegistrationForm {
     if (!this.password || !this.email) {
       throw new Error("Please specify email and password.");
     } else if (!regEmail.test(this.email)) {
-      throw new Error(
-        "Please specify email using following format: username@gmail.com"
-      );
+      throw new Error("Please specify email using following format: username@gmail.com");
     } else if (this.password.length < 8) {
       throw new Error("Password must be at least 8 characters long.");
     } else if (!regPassword.test(this.password)) {
-      throw new Error(
-        "Password must contain at least one uppercase letter, one lowercase letter, and one number."
-      );
+      throw new Error("Password must contain at least one uppercase letter, one lowercase letter, and one number.");
     } else if (this.password !== this.confirmPassword) {
       throw new Error("Passwords do not match.");
     } else {
