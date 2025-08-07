@@ -2,7 +2,7 @@ import { endpoints } from "../../utils/api/endpoints";
 import { patchRequestBody } from "../../fixtures/api/patchRequestBody";
 import superagent from "superagent";
 import dotenv from "dotenv";
-import { getResponceBody } from "../../fixtures/api/getResponceBody";
+import { getResponseBody } from "../../fixtures/api/getResponseBody";
 dotenv.config();
 
 describe("PATCH method", () => {
@@ -38,6 +38,6 @@ describe("PATCH method", () => {
   it("Should leave resource without changes if patch with empty body", async () => {
     const res = await superagent.patch(process.env.BASE_API_URL + endpoints.patch).send({});
 
-    expect(res.body).toEqual(getResponceBody);
+    expect(res.body).toEqual(getResponseBody);
   });
 });

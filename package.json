@@ -5,7 +5,9 @@
   "scripts": {
     "unitTest": "mocha ./test/unit/*.*.ts",
     "apiTest": "jest ./test/api/*.*.ts",
-    "uiTest": "npx playwright test"
+    "uiTest": "npx playwright test",
+    "generateAllureReport": "npx allure generate ./allure-results -o ./allure-report",
+    "openAllureRepot": "npx allure open ./allure-report"
   },
   "keywords": [],
   "author": "",
