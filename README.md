@@ -167,10 +167,11 @@ npm run unitTest
 
 <a id="generateAllureReport"></a>
 
-## 📊 Генерация Allure отчетов
+## 📊 Генерация и открытие Allure отчетов
 
 ```bash
-npx allure generate ./allure-results -o ./allure-report
+npm run generateAllureReport
+npm run openAllureRepot
 ```
 
 ---

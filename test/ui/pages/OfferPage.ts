@@ -1,17 +1,27 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
 export class OfferPage {
-  constructor(private page: Page) {}
+  public readonly page: Page;
+  private readonly offer_title: Locator;
+  private readonly offer_price: Locator;
+  private readonly offer_photo: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.offer_title = page.locator("h1.vehicle-form__title");
+    this.offer_price = page.locator(".vehicle-form__price_condensed");
+    this.offer_photo = page.locator("//div[contains(@class, 'fotorama__active')]/img");
+  }
 
   offerTitle() {
-    return this.page.locator("h1.vehicle-form__title");
+    return this.offer_title;
   }
 
   offerPrice() {
-    return this.page.locator(".vehicle-form__price_condensed");
+    return this.offer_price;
   }
 
   offerPhoto() {
-    return this.page.locator("//div[contains(@class, 'fotorama__active')]/img");
+    return this.offer_photo;
   }
 }

@@ -1,19 +1,33 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
 export class ProductPage {
-  constructor(private page: Page) {}
+  public readonly page: Page;
+  private readonly buy_now: Locator;
+  private readonly add_to_cart: Locator;
+  private readonly go_to_cart: Locator;
+  private readonly product_full_name: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.buy_now = page.locator(".product-aside__offers-item:first-child .product-aside__button_buy");
+    this.add_to_cart = page.locator(".product-aside__offers-item:first-child .product-aside__button_cart");
+    this.go_to_cart = page.locator('.button-style_base-alter[href^="https://cart."]');
+    this.product_full_name = page.locator(".catalog-masthead__title");
+  }
 
   async buyNow() {
-    await this.page.click(".product-aside__offers-item:first-child .product-aside__button_buy");
+    await this.buy_now.click();
   }
+
   async addToCart() {
-    await this.page.click(".product-aside__offers-item:first-child .product-aside__button_cart");
+    await this.add_to_cart.click();
   }
+
   async goToCart() {
-    await this.page.click('.button-style_base-alter[href^="https://cart."]');
+    await this.go_to_cart.click();
   }
 
   productFullName() {
-    return this.page.locator(".catalog-masthead__title");
+    return this.product_full_name;
   }
 }

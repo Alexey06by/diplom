@@ -1,15 +1,21 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 import dotenv from "dotenv";
 dotenv.config();
 
 export class MainPage {
-  constructor(private page: Page) {}
+  public readonly page: Page;
+  private readonly catalog: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.catalog = page.locator('.b-main-navigation__link[href^="https://catalog."]');
+  }
 
   async open() {
     await this.page.goto(process.env.BASE_UI_URL);
   }
 
   async openCatalog() {
-    await this.page.click('.b-main-navigation__link[href^="https://catalog."]');
+    await this.catalog.click();
   }
 }
