@@ -3,10 +3,32 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unitTest": "mocha ./test/unit/*.*.ts",
+    "apiTest": "jest ./test/api/*.*.ts",
+    "uiTest": "npx playwright test",
+    "generateAllureReport": "npx allure generate ./allure-results -o ./allure-report",
+    "openAllureRepot": "npx allure open ./allure-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/chai": "^5.2.2",
+    "@types/jest": "^30.0.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.2.0",
+    "@types/superagent": "^8.1.9",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.3.3",
+    "chai": "^5.2.1",
+    "dotenv": "^17.2.1",
+    "jest": "^30.0.5",
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
+    "superagent": "^10.2.3",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2"
+  }
 }
